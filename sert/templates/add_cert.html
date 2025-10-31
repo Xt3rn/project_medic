@@ -1,6 +1,13 @@
-<h1>Заполнение сертификата прививок</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Добавить сертификат</button>
-</form>
+{% extends "base.html" %}
+{% block title %}
+Заполнение сертификата прививок
+{% endblock %}
+{% block content %}
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Добавить сертификат</button>
+        </form>
+    </body>
+{% endblock %}

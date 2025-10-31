@@ -1,4 +1,7 @@
-<h1>Список зарегистрированных полисов</h1>
+{% extends "base.html" %}
+{% block title %}
+Список зарегистрированных полисов
+{% endblock %}
 {% for policy in page_obj %}
 <div>
     Полис №{{ policy.number }} выдан на имя {{ policy.name }} {{ policy.surname }} {{ policy.dadname }}
@@ -6,9 +9,9 @@
 {% endfor %}
 
 <div>
-    <a href="{% url 'previous' %}" >«</a>
+    <a href="{% url 'previous' %}" ></a>
       
     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
       
-    <a href="{% url 'next' %}" >»</a>
+    <a href="{% url 'next' %}" ></a>
 </div>
